@@ -1,0 +1,19 @@
+Using java Date functions
+
+You can also use java Date() and SimpleDateFormat() methods. Create a function that returns timestamp and use the value while setting the content value for date column.
+
+Following function getDateTime() returns datetime.
+
+private String getDateTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        Date date = new Date();
+        return dateFormat.format(date);
+}
+and use the value returned by getDateTime() to set content value.
+
+ContentValues values = new ContentValues();
+values.put('username', 'ravitamada');
+values.put('created_at', getDateTime());
+// insert the row
+long id = db.insert('users', null, values);
