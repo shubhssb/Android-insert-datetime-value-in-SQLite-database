@@ -1,0 +1,12 @@
+Inserting current timestamp by default
+If you don’t want to insert the timestamp manually each time you create a row, you can do it by keeping the default value while creating the table. Use the DEFAULT keyword and one of the following data type.
+
+CURRENT_TIME – Inserts only time
+CURRENT_DATE – Inserts only date
+CURRENT_TIMESTAMP – Inserts both time and date
+
+CREATE TABLE users(
+    id INTEGER PRIMARY KEY,
+    username TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
