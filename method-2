@@ -1,0 +1,4 @@
+Using datetime() while inserting the row
+
+You can also insert datetime manually using datetime() function while inserting the row.
+db.execSQL("INSERT INTO users(username, created_at) VALUES('ravitamada', 'datetime()'");
